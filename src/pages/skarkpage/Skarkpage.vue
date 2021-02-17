@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <h1>Welcome to Skarkpage</h1>
-    <div v-if="true">
+    <h1 class="secondary--text">Welcome to Skarkpage</h1>
+    <div v-if="false">
       <p class="red white--text">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam,
         voluptatum modi debitis rem consequatur illo ratione earum. Suscipit rem
@@ -19,7 +19,7 @@
       <p class="headline">This is a headline</p>
       <p class="subheading">This is a subheading</p>
       <p class="caption">this is a caption</p>
-    </div>
+    
 
     <v-btn class="pink white--text">button</v-btn>
     <br />
@@ -35,6 +35,7 @@
       <v-icon left large >mdi-email</v-icon>
       <span> email me</span>
       </v-btn>
+      </div>
   </div>
 </template>
 

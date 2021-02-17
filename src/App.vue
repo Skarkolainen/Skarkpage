@@ -1,7 +1,7 @@
 <template>
-  <v-app class="grey lighten-4">
+  <v-app>
     <navbar></navbar>
-    <v-main>
+    <v-main class="primary">
       <router-view></router-view>
     </v-main>
 
@@ -31,7 +31,7 @@ export default {
 }
 #app {
   font-family: 'CooperBlack';
-  background-color: yellow;
+ /* background-color: yellow;*/
 }
 
 </style>
