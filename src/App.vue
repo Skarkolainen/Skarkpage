@@ -1,22 +1,20 @@
 <template>
-  <v-app>
+  <v-app class="grey lighten-4">
+    <navbar></navbar>
     <v-main>
-      <the-header app />
-      <skarkpage/>
+      <router-view></router-view>
     </v-main>
+
   </v-app>
 </template>
 
 <script>
-import Skarkpage from './pages/skarkpage/Skarkpage.vue';
-import TheHeader from './components/layout/TheHeader.vue';
+import Navbar from './components/layout/Navbar.vue'
 
 export default {
   name: 'App',
-
   components: {
-    Skarkpage,
-    TheHeader
+    'navbar': Navbar
   },
 
   data: () => ({
