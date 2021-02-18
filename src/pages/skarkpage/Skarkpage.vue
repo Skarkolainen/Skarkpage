@@ -19,28 +19,51 @@
       <p class="headline">This is a headline</p>
       <p class="subheading">This is a subheading</p>
       <p class="caption">this is a caption</p>
-    
 
-    <v-btn class="pink white--text">button</v-btn>
-    <br />
-    <br />
-    <v-btn depressed dark color="pink">Click me</v-btn>
-    <br>
-    <br>
-    <v-btn text color="pink">click</v-btn>
+      <v-btn class="pink white--text">button</v-btn>
+      <br />
+      <br />
+      <v-btn depressed dark color="pink">Click me</v-btn>
+      <br />
+      <br />
+      <v-btn text color="pink">click</v-btn>
 
-    <br>
-    <br>
-    <v-btn depressed large class="pink white--text">
-      <v-icon left large >mdi-email</v-icon>
-      <span> email me</span>
+      <br />
+      <br />
+      <v-btn depressed large class="pink white--text">
+        <v-icon left large>mdi-email</v-icon>
+        <span> email me</span>
       </v-btn>
-      </div>
+    </div>
+    <br /><br /><br />
+
+    <div v-if="true" >
+      <carousel :autoplay="true" style="width: 20%">
+        <slide> <img src="https://via.placeholder.com/150" alt=""> </slide>
+        <slide> <img src="https://via.placeholder.com/150" alt=""> </slide>
+        <slide> <img src="https://via.placeholder.com/150" alt=""> </slide>
+        <slide> <img src="https://via.placeholder.com/150" alt=""> </slide>
+
+      </carousel>
+    </div>
   </div>
 </template>
 
 <script>
-export default {};
+import { Carousel, Slide } from "vue-carousel";
+
+export default {
+  data() {
+    return {
+      links: ['https://ssense.github.io/vue-carousel/examples/',
+      'https://madewithvuejs.com/blog/top-vue-js-slider-components']
+    }
+  },
+  components: {
+    Carousel,
+    Slide,
+  },
+};
 </script>
 
 <style scoped>
