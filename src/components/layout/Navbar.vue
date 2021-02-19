@@ -33,11 +33,18 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+
+      <v-spacer></v-spacer>
+      <br><br><br>
+      <my-carousel></my-carousel>
+
     </v-navigation-drawer>
   </nav>
 </template>
 
 <script>
+
+import myCarousel from '../content/carousel.vue'
 export default {
   data() {
     return {
@@ -51,6 +58,9 @@ export default {
       ]
     };
   },
+  components: {
+    myCarousel
+  }
 };
 </script>
 

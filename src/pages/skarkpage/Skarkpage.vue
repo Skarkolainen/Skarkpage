@@ -37,31 +37,47 @@
     </div>
     <br /><br /><br />
 
-    <div v-if="true" >
+    <div v-if="false">
       <carousel :autoplay="true" style="width: 20%">
-        <slide> <img src="https://via.placeholder.com/150" alt=""> </slide>
-        <slide> <img src="https://via.placeholder.com/150" alt=""> </slide>
-        <slide> <img src="https://via.placeholder.com/150" alt=""> </slide>
-        <slide> <img src="https://via.placeholder.com/150" alt=""> </slide>
-
+        <slide> <img src="https://via.placeholder.com/150" alt="" /> </slide>
+        <slide> <img src="https://via.placeholder.com/150" alt="" /> </slide>
+        <slide> <img src="https://via.placeholder.com/150" alt="" /> </slide>
+        <slide> <img src="https://via.placeholder.com/150" alt="" /> </slide>
       </carousel>
+    </div>
+
+    <div style="padding: 5%">
+      <VueSlickCarousel :arrows="true" :dots="false" :vertical="true" autoplay :autoplaySpeed='1000' :rows='2'>
+        <div><img src="https://via.placeholder.com/150" alt="" /></div>
+        <div><img src="https://via.placeholder.com/150" alt="" /></div>
+        <div><img src="https://via.placeholder.com/150" alt="" /></div>
+        <div><img src="https://via.placeholder.com/150" alt="" /></div>
+      </VueSlickCarousel>
     </div>
   </div>
 </template>
 
 <script>
 import { Carousel, Slide } from "vue-carousel";
+import VueSlickCarousel from "vue-slick-carousel";
+import "vue-slick-carousel/dist/vue-slick-carousel.css";
+// optional style for arrows & dots
+import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 
 export default {
   data() {
     return {
-      links: ['https://ssense.github.io/vue-carousel/examples/',
-      'https://madewithvuejs.com/blog/top-vue-js-slider-components']
-    }
+      links: [
+        "https://ssense.github.io/vue-carousel/examples/",
+        "https://madewithvuejs.com/blog/top-vue-js-slider-components",
+        'https://github.com/gs-shop/vue-slick-carousel'
+      ],
+    };
   },
   components: {
     Carousel,
     Slide,
+    VueSlickCarousel,
   },
 };
 </script>
