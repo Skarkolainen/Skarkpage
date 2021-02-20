@@ -1,7 +1,7 @@
 import Skarkpage from './pages/skarkpage/Skarkpage.vue'
 import Kart from './pages/kart/Kart.vue'
 
-import Lister from './pages/listeApp/Lister.vue'
+import ListeApp from './pages/listeApp/ListeApp.vue'
 import NyListe from './pages/listeApp/nyListe.vue'
 import Liste from './pages/listeApp/Liste.vue'
 import ListePunktDetaljer from './pages/listeApp/ListepunktDetaljer.vue'
@@ -26,7 +26,7 @@ export const routes = [
   {
     path: '/:ListeApp',
     name: 'ListeApp',
-    component: Lister,
+    component: ListeApp,
     children: [
       {
         path: ':listeNavn',

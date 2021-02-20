@@ -1,9 +1,9 @@
 <template>
-    <b-container>
-        <h1>Lister </h1>
-        <div>Visning av alle lister</div>
+    <div class="listeApp">
+        <h1>ListeApp </h1>
+        <p>Visning av alle lister</p>
         <router-view></router-view>
-    </b-container>    
+    </div>    
 </template>
 
 <script>

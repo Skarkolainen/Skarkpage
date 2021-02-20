@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="skarkpage">
     <h1 class="secondary--text">Welcome to Skarkpage</h1>
     <div v-if="false">
       <p class="red white--text">
@@ -46,7 +46,7 @@
       </carousel>
     </div>
 
-    <div style="padding: 5%">
+    <div v-if="false" style="padding: 5%">
       <VueSlickCarousel :arrows="true" :dots="false" :vertical="true" autoplay :autoplaySpeed='1000' :rows='2'>
         <div><img src="https://via.placeholder.com/150" alt="" /></div>
         <div><img src="https://via.placeholder.com/150" alt="" /></div>
@@ -54,15 +54,22 @@
         <div><img src="https://via.placeholder.com/150" alt="" /></div>
       </VueSlickCarousel>
     </div>
+
+    <br>
+  <dato-tid v-if="false"></dato-tid>
+    
   </div>
 </template>
 
 <script>
 import { Carousel, Slide } from "vue-carousel";
 import VueSlickCarousel from "vue-slick-carousel";
+import DatoTid from '../../components/content/DatoTid.vue';
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 // optional style for arrows & dots
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
+
+
 
 export default {
   data() {
@@ -78,6 +85,7 @@ export default {
     Carousel,
     Slide,
     VueSlickCarousel,
+    DatoTid,
   },
 };
 </script>
