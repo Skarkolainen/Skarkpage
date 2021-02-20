@@ -8,9 +8,8 @@
         class="black--text"
         @click="drawer = !drawer"
       ></v-app-bar-nav-icon>
-
-      <v-toolbar-title class="grey--text"
-        ><span class="font-weigth-light secondary--text">Skarkpage</span>
+      <v-toolbar-title style="cursor: pointer" @click="$router.push('/')"  class="grey--text"
+        ><span class="font-weigth-light secondary--text" >Skarkpage</span>
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
@@ -24,7 +23,8 @@
     <!-- VENSTRE NAVDRAWER -->
     <v-navigation-drawer app v-model="drawer" class="secondary primary--text">
       <v-list>
-        <v-list-item v-for="link in links" :key="link.text" router :to="link.route">
+        <!--FIXME Bedre kontrast på hover -->
+        <v-list-item @click="drawer = false"  v-for="link in links" :key="link.text" router :to="link.route">
 
           <v-list-item-action>
             <v-icon class="primary--text">{{link.icon}}</v-icon>
@@ -38,8 +38,8 @@
       </v-list>
 
       <v-spacer></v-spacer>
-      <br><br><br>
-      <my-carousel></my-carousel>
+      <br><br>
+      <my-carousel class="float-right" style="max-height: 20%"></my-carousel>
 
     </v-navigation-drawer>
   </nav>
