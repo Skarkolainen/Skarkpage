@@ -1,0 +1,11 @@
+
+
+@font-face {
+    font-family: "CooperBlack";
+    src: local("CooperBlack"),
+     url(~@/assets/fonts/CooperBlackRegular.ttf) format("truetype");
+  }
+
+$body-font-family: "CooperBlack" !important;
+$heading-font-family: $body-font-family;
+//$font-size-root: 72px;

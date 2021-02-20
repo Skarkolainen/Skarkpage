@@ -1,6 +1,6 @@
 <template>
     <div style="padding: 5%">
-      <VueSlickCarousel :arrows="true" :dots="false" :vertical="true" autoplay :autoplaySpeed='1000' :rows='3'>
+      <VueSlickCarousel :arrows="true" :dots="false" :vertical="true" autoplay :autoplaySpeed='1000' :rows='2'>
         <div><img src="https://via.placeholder.com/150" alt="" /></div>
         <div><img src="https://via.placeholder.com/150" alt="" /></div>
         <div><img src="https://via.placeholder.com/150" alt="" /></div>

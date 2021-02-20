@@ -1,6 +1,8 @@
 
 <template>
   <nav>
+
+    <!-- TOP NAVBAR -->
     <v-app-bar flat app class="primary">
       <v-app-bar-nav-icon
         class="black--text"
@@ -19,6 +21,7 @@
       </v-btn>
     </v-app-bar>
 
+    <!-- VENSTRE NAVDRAWER -->
     <v-navigation-drawer app v-model="drawer" class="secondary primary--text">
       <v-list>
         <v-list-item v-for="link in links" :key="link.text" router :to="link.route">

@@ -1,6 +1,13 @@
 <template>
   <div class="skarkpage">
-    <h1 class="secondary--text">Welcome to Skarkpage</h1>
+    <h1 class="heading secondary--text">Welcome to Skarkpage</h1>
+    <h2 class="subtitle-1">hellooo</h2>
+
+
+
+
+
+
     <div v-if="false">
       <p class="red white--text">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam,
@@ -35,7 +42,6 @@
         <span> email me</span>
       </v-btn>
     </div>
-    <br /><br /><br />
 
     <div v-if="false">
       <carousel :autoplay="true" style="width: 20%">

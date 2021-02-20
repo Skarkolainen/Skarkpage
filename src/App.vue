@@ -2,7 +2,8 @@
   <v-app>
     <navbar></navbar>
     <v-main class="primary">
-      <router-view></router-view>
+      <!-- class: m for margin, x for x-retning( left og right), b for bottom, 4 for strength -->
+      <router-view class="mx-4 mb-4"></router-view>
     </v-main>
     <v-footer></v-footer>
 
@@ -27,14 +28,5 @@ export default {
 </script>
 
 <style>
-@font-face {
-  font-family: "CooperBlack";
-  src: local("CooperBlack"),
-   url(./assets/fonts/CooperBlackRegular.ttf) format("truetype");
-}
-#app {
-  font-family: 'CooperBlack';
- /* background-color: yellow;*/
-}
 
 </style>
