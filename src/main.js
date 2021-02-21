@@ -6,12 +6,11 @@ import { routes } from './routes.js'
 import App from './App.vue'
 import store from './store'
 import vuetify from './plugins/vuetify';
-import VueCarousel from 'vue-carousel';
+
 
 Vue.config.productionTip = false
 
 Vue.use(VueRouter);
-Vue.use(VueCarousel);
 
 const router = new VueRouter({
   mode: 'history',

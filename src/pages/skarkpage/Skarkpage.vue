@@ -4,6 +4,7 @@
 
     <v-container class="my-5">
 
+
 <v-layout row class="mb-3">
 
   <v-btn small text color="grey mx-1" @click="sortBy('title')" >
@@ -110,30 +111,6 @@
       </v-btn>
     </div>
 
-    <div v-if="false">
-      <carousel :autoplay="true" style="width: 20%">
-        <slide> <img src="https://via.placeholder.com/150" alt="" /> </slide>
-        <slide> <img src="https://via.placeholder.com/150" alt="" /> </slide>
-        <slide> <img src="https://via.placeholder.com/150" alt="" /> </slide>
-        <slide> <img src="https://via.placeholder.com/150" alt="" /> </slide>
-      </carousel>
-    </div>
-
-    <div v-if="false" style="padding: 5%">
-      <VueSlickCarousel
-        :arrows="true"
-        :dots="false"
-        :vertical="true"
-        autoplay
-        :autoplaySpeed="1000"
-        :rows="2"
-      >
-        <div><img src="https://via.placeholder.com/150" alt="" /></div>
-        <div><img src="https://via.placeholder.com/150" alt="" /></div>
-        <div><img src="https://via.placeholder.com/150" alt="" /></div>
-        <div><img src="https://via.placeholder.com/150" alt="" /></div>
-      </VueSlickCarousel>
-    </div>
 
     <br />
     <dato-tid v-if="false"></dato-tid>
@@ -141,12 +118,8 @@
 </template>
 
 <script>
-import { Carousel, Slide } from "vue-carousel";
-import VueSlickCarousel from "vue-slick-carousel";
 import DatoTid from "../../components/content/DatoTid.vue";
-import "vue-slick-carousel/dist/vue-slick-carousel.css";
-// optional style for arrows & dots
-import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
+
 
 export default {
   data() {
@@ -198,10 +171,8 @@ export default {
     }
   },
   components: {
-    Carousel,
-    Slide,
-    VueSlickCarousel,
     DatoTid,
+  
   },
 };
 </script>
