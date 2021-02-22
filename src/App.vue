@@ -3,7 +3,7 @@
     <navbar></navbar>
     <v-main class="primary">
       <!-- class: m for margin, x for x-retning( left og right), b for bottom, 4 for strength -->
-      <router-view class="mx-4 mb-4"></router-view>
+      <router-view ></router-view>
     </v-main>
     <v-footer></v-footer>
 

@@ -6,7 +6,7 @@ import { routes } from './routes.js'
 import App from './App.vue'
 import store from './store'
 import vuetify from './plugins/vuetify';
-
+import 'leaflet/dist/leaflet.css';
 
 Vue.config.productionTip = false
 
