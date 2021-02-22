@@ -9,8 +9,8 @@ const vuetify = new Vuetify({
     themes: {
       light: {
         primary: '#ffeb3b',
-        secondary: '#800000',
-        anchor: '#000000',
+        secondary: '#627264',
+        anchor: '#32021F',
       },
     },
   },
