@@ -20,15 +20,18 @@
     >
       <l-tile-layer :url="url" :subdomains="subdomains"></l-tile-layer>
     </v-row>
+    <l-map v-if="false">
+      <!-- for at linter skal se at l-map er i bruk-->
+    </l-map>
   </v-container>
 </template>
 
 <script>
-import { /*LMap,*/ LTileLayer } from "vue2-leaflet";
+import { LMap, LTileLayer } from "vue2-leaflet";
 
 export default {
   components: {
-    //LMap,
+    LMap,
     LTileLayer,
   },
   data() {
