@@ -80,6 +80,7 @@ export default {
 </script>
 
 <style scoped>
+.v-app-bar,
 .v-navigation-drawer {
   z-index: 999999 !important;
 }

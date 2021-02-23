@@ -9,3 +9,9 @@
 <script>
 export default {};
 </script>
+
+<style scoped>
+.v-footer {
+  z-index: 999999 !important;
+}
+</style>
