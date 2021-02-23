@@ -2,6 +2,7 @@
 <template>
   <nav>
     <!-- TOP NAVBAR -->
+
     <v-app-bar flat app class="primary">
       <v-app-bar-nav-icon
         class="black--text"
@@ -45,7 +46,7 @@
       </v-list>
       <template v-slot:append>
         <my-carousel></my-carousel>
-        <div class="hidden-md-and-up"  style="clear: both; height: 120px;"></div>
+        <div class="hidden-md-and-up" style="clear: both; height: 120px"></div>
       </template>
 
       <v-footer v-if="false" class="justify-center pl-0" heigth="200" app>
@@ -79,4 +80,7 @@ export default {
 </script>
 
 <style scoped>
+.v-navigation-drawer {
+  z-index: 999999 !important;
+}
 </style>

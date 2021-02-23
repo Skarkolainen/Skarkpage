@@ -1,5 +1,5 @@
 <template>
-  <div class="skarkpage">
+  <v-container class="skarkpage">
     <h1 class="heading secondary--text">Welcome to Skarkpage</h1>
 
     <v-container class="my-5">
@@ -114,7 +114,7 @@
 
     <br />
     <dato-tid v-if="false"></dato-tid>
-  </div>
+  </v-container>
 </template>
 
 <script>

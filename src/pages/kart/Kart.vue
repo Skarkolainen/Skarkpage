@@ -1,12 +1,12 @@
 <template>
-  <div style="height: 100%">
+  <v-container fluid class="pt-0 px-0" style="height: 100%; width:100%">
     <div v-if="true" class="info" style="height: 5%">
       <span>Center: {{ center }}</span>
       <span>Zoom: {{ zoom }}</span>
       <span>Bounds: {{ bounds }}</span>
     </div>
     <l-map
-      style="height: 100%; width: 100%"
+      
       :zoom="zoom"
       :center="center"
       @update:zoom="zoomUpdated"
@@ -15,7 +15,7 @@
     >
       <l-tile-layer :url="url" :subdomains="subdomains"></l-tile-layer>
     </l-map>
-  </div>
+  </v-container>
 </template>
 
 <script>
