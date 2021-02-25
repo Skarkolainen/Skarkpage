@@ -6,6 +6,8 @@ import { routes } from './routes.js'
 import App from './App.vue'
 import store from './store'
 import vuetify from './plugins/vuetify';
+
+// --- Leaflet --- //
 import 'leaflet/dist/leaflet.css';
 import { Icon } from 'leaflet';
 
@@ -15,6 +17,17 @@ Icon.Default.mergeOptions({
   iconUrl: require('leaflet/dist/images/marker-icon.png'),
   shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
 });
+
+// --- Leaflet --- //
+
+// --- VueLayers ---//
+import VueLayers from 'vuelayers'
+import 'vuelayers/lib/style.css' // needs css-loader
+
+Vue.use(VueLayers, {
+  dataProjection: 'EPSG:4326',
+})
+// --- VueLayers ---//
 
 Vue.config.productionTip = false
 

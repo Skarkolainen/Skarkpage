@@ -1,6 +1,6 @@
 <template>
-  <v-container fluid class="px-0 mx-0" style="height: 50%">
-    <v-row v-if="false" class="info" style="height: 10%">
+  <v-container fluid class="px-0 mx-0" style="height: 100%">
+    <v-row v-if="true" class="info" style="min-height: 5%">
       <span>Center: {{ center }}</span>
       <span>Zoom: {{ zoom }}</span>
       <span>Bounds: {{ bounds }}</span>
@@ -8,6 +8,7 @@
     </v-row>
 
     <v-row
+      style="heigth: 90%; border: solid red"
       tag="l-map"
       class="mx-0 mt-0"
       ref="myMap"

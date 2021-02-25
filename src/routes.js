@@ -1,5 +1,6 @@
 import Skarkpage from './pages/skarkpage/Skarkpage.vue'
 import Kart from './pages/kart/Kart.vue'
+import KartVueLayers from './pages/kart/KartVueLayers.vue'
 
 import ListeApp from './pages/listeApp/ListeApp.vue'
 import NyListe from './pages/listeApp/nyListe.vue'
@@ -22,6 +23,11 @@ export const routes = [
     path: '/kart',
     name: 'Kart',
     component: Kart
+  },
+  {
+    path: '/kartVl',
+    name: 'KartVl',
+    component: KartVueLayers
   },
   {
     path: '/:ListeApp',

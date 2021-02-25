@@ -64,12 +64,9 @@ export default {
       drawer: false,
       links: [
         { icon: "mdi-view-dashboard-outline", text: "Skarkpage", route: "/" },
-        {
-          icon: "mdi-format-list-checks",
-          text: "ListeApp",
-          route: "/ListeApp",
-        },
+        { icon: "mdi-format-list-checks", text: "ListeApp", route: "/ListeApp"},
         { icon: "mdi-map", text: "Kart", route: "/kart" },
+        { icon: "mdi-map", text: "KartVueLayers", route: "/kartVl" },
       ],
     };
   },
