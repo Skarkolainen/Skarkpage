@@ -45,7 +45,7 @@ export default {
       url: `https://opencache{s}.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo4&zoom={z}&x={x}&y={y}`,
       // url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       subdomains: ["", "2", "3"],
-      zoom: 4,
+      zoom: 5,
       center: [63.908566, 14.7278],
       brukerPosGitt: false,
       brukerPos: ["", ""],
