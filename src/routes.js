@@ -3,6 +3,7 @@ import Kart from './pages/kart/Kart.vue'
 import KartVueLayers from './pages/kart/KartVueLayers.vue'
 
 import ListeApp from './pages/listeApp/ListeApp.vue'
+import ListeOversikt from './pages/listeApp/ListeOversikt.vue'
 import NyListe from './pages/listeApp/nyListe.vue'
 import Liste from './pages/listeApp/Liste.vue'
 import ListePunktDetaljer from './pages/listeApp/ListepunktDetaljer.vue'
@@ -30,10 +31,20 @@ export const routes = [
     component: KartVueLayers
   },
   {
-    path: '/:ListeApp',
+    path: '/ListeApp/',
     name: 'ListeApp',
     component: ListeApp,
     children: [
+      {
+        path: 'nyListe',
+        name: 'nyListe',
+        component: NyListe
+      },
+      {
+        path: 'listeOversikt',
+        name: 'listeOversikt',
+        component: ListeOversikt
+      },
       {
         path: ':listeNavn',
         name: 'listenavn',
@@ -46,11 +57,7 @@ export const routes = [
           },
         ]
       },
-      {
-        path: 'nyListe',
-        name: 'nyListe',
-        component: NyListe
-      }
+
     ]
   },
   {

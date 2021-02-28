@@ -1,7 +1,7 @@
 <template>
-    <b-container>
+    <v-container>
         <h4>Visning av listepunktdetaljer</h4>
-    </b-container>
+    </v-container>
 </template>
 
 <script>

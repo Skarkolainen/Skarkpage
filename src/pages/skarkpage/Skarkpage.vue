@@ -46,7 +46,7 @@
             </div>
           </v-flex>
         </v-layout>
-        <v-divider></v-divider>
+
       </v-card>
 
       <div v-if="false">

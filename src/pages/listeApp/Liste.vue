@@ -1,8 +1,8 @@
 <template>
-    <b-container>
+    <v-container>
         <h3>Visning av valgt liste</h3>
         <router-view></router-view>
-    </b-container>
+    </v-container>
 </template>
 
 <script>
