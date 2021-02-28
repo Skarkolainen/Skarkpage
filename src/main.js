@@ -19,7 +19,7 @@ Icon.Default.mergeOptions({
 });
 
 // --- Leaflet --- //
-
+/*
 // --- VueLayers ---//
 import VueLayers from 'vuelayers'
 import 'vuelayers/lib/style.css' // needs css-loader
@@ -28,7 +28,7 @@ Vue.use(VueLayers, {
   dataProjection: 'EPSG:4326',
 })
 // --- VueLayers ---//
-
+*/
 Vue.config.productionTip = false
 
 Vue.use(VueRouter);

@@ -1,96 +1,57 @@
 <template>
-  <div>
-    <vl-map
-      :load-tiles-while-animating="true"
-      :load-tiles-while-interacting="true"
-      data-projection="EPSG:4326"
-      style="height: 400px"
-    >
-      <vl-view
-        :zoom.sync="zoom"
-        :center.sync="center"
-        :rotation.sync="rotation"
-      ></vl-view>
-
-      <vl-geoloc @update:position="geolocPosition = $event">
-        <template slot-scope="geoloc">
-          <vl-feature v-if="geoloc.position" id="position-feature">
-            <vl-geom-point :coordinates="geoloc.position"></vl-geom-point>
-            <vl-style-box>
-              <vl-style-icon
-                src="@/public/favicon.ico"
-                :scale="0.4"
-                :anchor="[0.5, 1]"
-              ></vl-style-icon>
-            </vl-style-box>
-          </vl-feature>
-        </template>
-      </vl-geoloc>
-
-      <vl-layer-tile id="wmts">
-        <vl-source-wmts
-          :attributions="attribution"
-          :url="url"
-          :layer-name="layerName"
-          :matrix-set="matrixSet"
-          :matrixIds="matrixIds"
-          :format="format"
-          :style-name="styleName"
-          :tileGrid="tileGrid"
-        ></vl-source-wmts>
-      </vl-layer-tile>
-    </vl-map>
-    <div style="padding: 20px">
-      Zoom: {{ zoom }}<br />
-      Center: {{ center }}<br />
-      Rotation: {{ rotation }}<br />
-      My geolocation: {{ geolocPosition }}
-      <v-btn @click="knapp">knapp</v-btn>
-    </div>
-  </div>
+  <v-container id="mapApp" style="height: 100%">
+    <v-layout wrap fill-height>
+      <v-row no-gutters style="height: 100%">
+        <v-col style="border: solid yellow" cols="12" sm="12" md="8">
+          <map-container fill-height :geojson="geojson"></map-container>
+        </v-col>
+        <v-col style="border: solid yellow" cols="12" sm="12" md="4">
+          <v-row no-gutters>
+            <v-col
+              style="height: 300px;"
+              no-gutters
+              cols="12"
+              sm="6"
+              md="12"
+            >
+              <edit :geojson="geojson" v-on:change="geojson = $event"></edit
+            ></v-col>
+            <v-col style="height: 50%" no-gutters cols="12" sm="6" md="12"
+              >inspect</v-col
+            >
+          </v-row>
+        </v-col>
+      </v-row>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      kart: true,
-      geolocPosition: undefined,
+//https://dev.to/camptocamp-geo/integrating-an-openlayers-map-in-vue-js-a-step-by-step-guide-2n1p
 
-      linker: ["https://codesandbox.io/s/w3wp7?file=/src/App.vue"],
-      zoom: 2,
-      center: [-90, 50],
-      rotation: 0,
-      layerName: "topo4",
-      url: "http://opencache.statkart.no/gatekeeper/gk/gk.open_wmts?&",
-      matrixSet: "EPSG:25833",
-      matrixIds: [
-        "EPSG:25833:4",
-        "EPSG:25833:4",
-        "EPSG:25833:4",
-        "EPSG:25833:4",
-      ],
-      tileGrid: "",
-      format: "image/png",
-      styleName: "default",
-      attribution:
-        'Tiles © <a href="https://services.arcgisonline.com/arcgis/rest/' +
-        'services/Demographics/USA_Population_Density/MapServer/">ArcGIS</a>',
-    };
-  },
-  /*computed: {
-    url() {
-      let layer = "topo4"
-      let matrixSet ="EPSG%3A25833"
-      let TileMatrix = "EPSG%3A25833%3A4"
-      let url= `http://opencache.statkart.no/gatekeeper/gk/gk.open_wmts?&layer=${layer}&style=default&tilematrixset=${matrixSet}&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image%2Fpng&TileMatrix=EPSG%3A25833%3A4&TileCol=7&TileRow=6`
-      return url;
+import MapContainer from "../../components/content/OpenLayersMap/MapContainer.vue";
+import edit from "../../components/content/OpenLayersMap/Edit.vue";
+export default {
+  data: () => ({
+    // this is the initial GeoJSON data
+    geojson: {
+      type: "Feature",
+      properties: {},
+      geometry: {
+        type: "Polygon",
+        coordinates: [
+          [
+            [-27.0703125, 43.58039085560784],
+            [-28.125, 23.563987128451217],
+            [-10.8984375, 32.84267363195431],
+          ],
+        ],
+      },
     },
-  },*/
-  methods: {
-    knapp() {
-      this.kart = !this.kart;
-    },
+  }),
+  components: {
+    MapContainer,
+    edit,
   },
 };
 </script>
