@@ -1,23 +1,11 @@
 <template>
   <v-container class="listeApp">
     <h1 class="heading secondary--text">ListeApp</h1>
-    <v-list>
-      <v-list-item-group>
-        <v-list-item
-          v-for="link in links"
-          :key="link.route"
-          router
-          :to="link.route"
-        >
-          <v-list-item-content
-            ><v-list-item-title class="primary--text">
-              {{ link.text }}</v-list-item-title
-            >
-          </v-list-item-content>
-        </v-list-item>
-      </v-list-item-group>
-    </v-list>
-
+    <v-row class="my-2">
+      <div v-for="link in links" :key="link.route">
+        <v-btn :to="link.route" elevation="2" outlined>{{ link.text }}</v-btn>
+      </div>
+    </v-row>
     <v-container class="my-5">
       <h3>Visning av lagNyListe, listeoversikt eller en enkeltliste</h3>
       <router-view></router-view>
@@ -38,7 +26,7 @@ export default {
           text: "Alle lister",
           route: "/ListeApp/ListeOversikt",
         },
-        { text: "ValgtListe", route: "/ListeApp/Liste" },
+        { text: "ValgtListe", route: "/ListeApp/ListeNavn" },
       ],
     };
   },
