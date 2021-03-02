@@ -8,16 +8,23 @@
       :items-per-page="5"
       @click:row="klikk"
     >
-      <template v-slot:items="props">
-        <td>{{ props.item.navn +"hello" }}</td>
-        <td class="text-xs-right" style="background-color: yellow;">{{ props.item.opprettet }}</td>
+      <template v-slot:item.aktive="{ item }">
+        <v-chip :color="getColor(item.aktive)" dark>
+          {{ item.aktive }}
+        </v-chip>
+      </template>
 
+      <template v-slot:item.endret="{ item }">
+        <span dark>
+          {{ item.endret | tabellDato }}
+        </span>
       </template>
     </v-data-table>
   </v-container>
 </template>
 
 <script>
+
 export default {
   data() {
     return {
@@ -34,47 +41,52 @@ export default {
           aktive: 5,
           fullførte: 2,
           opprettet: 24,
-          endret: new Date(2020, 12, 31, 16, 30).toISOString(),
+          endret: 201812181630,
         },
         {
           navn: "Middagstips",
           aktive: 5,
           fullførte: 2,
           opprettet: 24,
-          endret: new Date(2020, 12, 31, 16, 31).toISOString(),
+          endret: 201812181631,
         },
         {
           navn: "Ønskeliste",
           aktive: 5,
           fullførte: 2,
           opprettet: 24,
-          endret: new Date(2021, 12, 31, 16, 30).toISOString(),
+          endret: 201912181630,
         },
         {
           navn: "Handleliste2",
           aktive: 5,
           fullførte: 2,
           opprettet: 24,
-          endret: new Date(2022, 12, 31, 16, 30).toISOString(),
+          endret: 201812191630,
         },
         {
           navn: "Middagstips2",
           aktive: 5,
           fullførte: 2,
           opprettet: 24,
-          endret: new Date(2020, 12, 30, 16, 30).toISOString(),
+          endret: 201812181630,
         },
         {
           navn: "Ønskeliste2",
           aktive: 5,
           fullførte: 2,
           opprettet: 24,
-          endret: new Date(2019, 12, 31, 16, 30).toISOString(),
+          endret: 201812181630,
         },
       ],
     };
   },
   methods: {
+    getColor(calories) {
+      if (calories > 400) return "red";
+      else if (calories > 200) return "orange";
+      else return "green";
+    },
     klikk(props) {
       console.log(props.navn);
       this.$router.push("/ListeApp/" + props.navn);
@@ -103,6 +115,13 @@ export default {
         }
       });
       return items;
+    },
+  },
+  filters: {
+    tabellDato: function (dato) {
+      const år = Math.floor(dato / 100000000)
+      const mnd = Math.floor((dato - (år * 100000000)) / 1000000)
+      return år.toString() + " " + mnd.toString();
     },
   },
 };
